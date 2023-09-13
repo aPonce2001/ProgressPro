@@ -17,7 +17,7 @@
         android:gravity="center_vertical">
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/imageButtonClose"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:contentDescription="@string/close_window"
@@ -32,7 +32,7 @@
             android:layout_weight="1" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/imageButtonSave"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@android:color/transparent"
@@ -70,7 +70,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton9"
+                android:id="@+id/imageButtonCalendar"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:src="@drawable/calendar"
@@ -79,7 +79,7 @@
                 android:contentDescription="@string/calendar"/>
 
             <ImageButton
-                android:id="@+id/imageButton10"
+                android:id="@+id/imageButtonPin"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:background="@drawable/image_button_selector"
@@ -102,14 +102,14 @@
             tools:ignore="UselessParent">
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/checkBoxAddTask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:buttonTint="@color/checkbox_color"
                 tools:ignore="TouchTargetSizeCheck,VisualLintBounds" />
 
             <EditText
-                android:id="@+id/editTextText3"
+                android:id="@+id/editTextDescriptionAddTask"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/description"
@@ -121,7 +121,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/addTask"
+        android:id="@+id/buttonAddTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/add_sub_task"

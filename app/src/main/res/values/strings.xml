@@ -11,4 +11,5 @@
     <string name="add_sub_task">Add sub-task</string>
     <string name="task_name">Task name</string>
     <string name="close_window">Close window</string>
+    <string name="item_text">Item Text</string>
 </resources>

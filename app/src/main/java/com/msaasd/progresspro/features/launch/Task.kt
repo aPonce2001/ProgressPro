@@ -1,10 +1,11 @@
 package com.msaasd.progresspro.features.launch
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.msaasd.progresspro.R
 
@@ -25,11 +26,16 @@ class Task : AppCompatActivity() {
         )
         drawer.addDrawerListener(toggle)
         toggle.syncState()
+
+
+        val listView: ListView = findViewById(R.id.listTask)
+        // Datos de ejemplo (puedes reemplazarlos con tus propios datos)
+        val items = arrayOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+        // Crear un adaptador personalizado
+        val adapter = ArrayAdapter<String>(this, R.layout.list_item, R.id.textViewTask, items)
+        // Establecer el adaptador en el ListView
+        listView.adapter = adapter
+
     }
 
-    override fun onBackPressed() = if (drawer!!.isDrawerOpen(GravityCompat.START)) {
-        drawer!!.closeDrawer(GravityCompat.START)
-    } else {
-        super.onBackPressed()
-    }
 }

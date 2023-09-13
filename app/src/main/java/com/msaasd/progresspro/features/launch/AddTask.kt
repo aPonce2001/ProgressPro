@@ -3,7 +3,6 @@ package com.msaasd.progresspro.features.launch
 import android.app.DatePickerDialog
 import android.icu.util.Calendar
 import android.os.Bundle
-import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
@@ -15,17 +14,17 @@ class AddTask : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.add_task)
 
         val linearLayoutContainer = findViewById<LinearLayout>(R.id.containerLayout)
-        val addButton = findViewById<ImageButton>(R.id.addTask)
+        val addButton = findViewById<ImageButton>(R.id.buttonAddTask)
 
-        val imageButtonCalendar = findViewById<ImageButton>(R.id.imageButton9)
+        val imageButtonCalendar = findViewById<ImageButton>(R.id.imageButtonCalendar)
 
-        val imageButton = findViewById<ImageButton>(R.id.imageButton10)
+        val imageButton = findViewById<ImageButton>(R.id.imageButtonPin)
         var isSelected = false
 
-        addButton.setOnClickListener(View.OnClickListener {
+        addButton.setOnClickListener {
             // Crear elementos dinámicamente
             val linearLayoutItem = LinearLayout(this)
             linearLayoutItem.orientation = LinearLayout.HORIZONTAL
@@ -54,7 +53,6 @@ class AddTask : AppCompatActivity() {
             // Agregar el elemento LinearLayout secundario al contenedor principal
             linearLayoutContainer.addView(linearLayoutItem)
         }
-        )
 
         imageButtonCalendar.setOnClickListener {
             // Obtiene la fecha actual para establecerla como fecha predeterminada en el DatePickerDialog
@@ -67,7 +65,7 @@ class AddTask : AppCompatActivity() {
             val datePickerDialog = DatePickerDialog(
                 this,
                 R.style.DatePickerStyle,
-                DatePickerDialog.OnDateSetListener { _, selectedYear, selectedMonth, selectedDay ->
+                { _, selectedYear, selectedMonth, selectedDay ->
                     // Aquí puedes manejar la fecha seleccionada
                     val selectedDate = "$selectedYear-${selectedMonth + 1}-$selectedDay"
                     // Haz lo que necesites con la fecha seleccionada, por ejemplo, mostrarla en un TextView
