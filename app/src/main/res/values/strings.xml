@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">ProgressPro</string>
     <string name="description">Description</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="username">Username</string>
+    <string name="profile">Profile</string>
+    <string name="pin">Pin</string>
+    <string name="calendar">Calendar</string>
+    <string name="save">Save</string>
+    <string name="add_sub_task">Add sub-task</string>
+    <string name="task_name">Task name</string>
+    <string name="close_window">Close window</string>
 </resources>
