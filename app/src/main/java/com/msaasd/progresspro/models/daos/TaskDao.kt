@@ -37,13 +37,13 @@ interface TaskDao {
 
     @Transaction
     @Query("SELECT * FROM tasks WHERE user_id = :userId AND state = :createdState")
-    fun getCreatedTasks(userId: Int, createdState: TaskState = TaskState.CREATED): LiveData<List<Task>>
+    suspend fun getCreatedTasks(userId: Int, createdState: TaskState = TaskState.CREATED): LiveData<List<Task>>
 
     @Transaction
     @Query("SELECT * FROM tasks WHERE user_id = :userId AND state = :doneState")
-    fun getDoneTasks(userId: Int, doneState: TaskState = TaskState.DONE): LiveData<List<Task>>
+    suspend fun getDoneTasks(userId: Int, doneState: TaskState = TaskState.DONE): LiveData<List<Task>>
 
     @Transaction
     @Query("SELECT * FROM tasks WHERE user_id = :userId AND is_pinned = 1")
-    fun getPinnedTasks(userId: Int): LiveData<List<Task>>
+    suspend fun getPinnedTasks(userId: Int): LiveData<List<Task>>
 }
