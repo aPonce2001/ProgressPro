@@ -41,4 +41,8 @@ interface TaskDao {
     @Transaction
     @Query("SELECT * FROM tasks WHERE user_id = :userId AND state = :doneState")
     fun getDoneTasks(userId: Int, doneState: TaskState = TaskState.DONE): List<Task>
+
+    @Transaction
+    @Query("SELECT * FROM tasks WHERE user_id = :userId AND is_pinned = 1")
+    fun getPinnedTasks(userId: Int): List<Task>
 }
