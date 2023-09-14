@@ -12,4 +12,8 @@
     <string name="task_name">Task name</string>
     <string name="close_window">Close window</string>
     <string name="item_text">Item Text</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="badge">Insign</string>
+    <string name="leader">Leader</string>
+    <string name="lock">Lock</string>
 </resources>
