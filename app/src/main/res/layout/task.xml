@@ -25,7 +25,26 @@
         <ListView
             android:id="@+id/listTask"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:padding="16dp"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButtonMoveToAddTaskActivity"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="end"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/move_to_interface_add_task"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/plus" />
+        </LinearLayout>
 
     </LinearLayout>
 

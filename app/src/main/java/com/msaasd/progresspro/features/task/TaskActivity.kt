@@ -42,6 +42,12 @@ class TaskActivity : AppCompatActivity() {
         // Establecer el adaptador en el ListView
         listView.adapter = adapter
 
+        val buttonMoveToAddTaskActivity = findViewById<ImageButton>(R.id.imageButtonMoveToAddTaskActivity)
+        buttonMoveToAddTaskActivity.setOnClickListener {
+            val intent = Intent(this, AddTaskActivity::class.java)
+            startActivity(intent)
+        }
+
         navView = findViewById(R.id.nav_view)
         navView.getHeaderView(0).findViewById<ImageButton>(R.id.imageProfileButtonNav).setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)

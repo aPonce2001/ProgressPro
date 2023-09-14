@@ -1,6 +1,7 @@
 package com.msaasd.progresspro.features.task
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.widget.CheckBox
@@ -18,7 +19,7 @@ class AddTaskActivity : AppCompatActivity() {
 
         val linearLayoutContainer = findViewById<LinearLayout>(R.id.containerLayout)
         val addButton = findViewById<ImageButton>(R.id.buttonAddTask)
-
+        val closeButton = findViewById<ImageButton>(R.id.imageButtonClose)
         val imageButtonCalendar = findViewById<ImageButton>(R.id.imageButtonCalendar)
 
         val imageButton = findViewById<ImageButton>(R.id.imageButtonPin)
@@ -84,6 +85,12 @@ class AddTaskActivity : AppCompatActivity() {
             isSelected = !isSelected
             imageButton.isSelected = isSelected
         }
+
+        closeButton.setOnClickListener {
+            val intent = Intent(this, TaskActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }
