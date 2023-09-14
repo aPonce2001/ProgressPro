@@ -8,6 +8,11 @@ import com.msaasd.progresspro.models.converters.LocalDateConverter
 import com.msaasd.progresspro.models.converters.LocalDateTimeConverter
 import com.msaasd.progresspro.models.converters.LocalTimeConverter
 import com.msaasd.progresspro.models.converters.TaskStateConverter
+import com.msaasd.progresspro.models.daos.BadgeDao
+import com.msaasd.progresspro.models.daos.SubtaskDao
+import com.msaasd.progresspro.models.daos.TaskDao
+import com.msaasd.progresspro.models.daos.UserBadgeCrossRefDao
+import com.msaasd.progresspro.models.daos.UserDao
 import com.msaasd.progresspro.models.entities.Badge
 import com.msaasd.progresspro.models.entities.Subtask
 import com.msaasd.progresspro.models.entities.Task
@@ -47,4 +52,14 @@ abstract class ProgressProDatabase: RoomDatabase() {
             }
         }
     }
+
+    abstract fun badgeDao(): BadgeDao
+
+    abstract fun userDao(): UserDao
+
+    abstract fun taskDao(): TaskDao
+
+    abstract fun subtaskDao(): SubtaskDao
+
+    abstract fun userBadgeCrossRefDao(): UserBadgeCrossRefDao
 }
