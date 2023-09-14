@@ -1,4 +1,4 @@
-package com.msaasd.progresspro.features.launch
+package com.msaasd.progresspro.features.task
 
 import android.app.DatePickerDialog
 import android.icu.util.Calendar
@@ -10,7 +10,7 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.msaasd.progresspro.R
 
-class AddTask : AppCompatActivity() {
+class AddTaskActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

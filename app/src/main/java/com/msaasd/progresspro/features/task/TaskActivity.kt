@@ -1,4 +1,4 @@
-package com.msaasd.progresspro.features.launch
+package com.msaasd.progresspro.features.task
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -9,7 +9,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import com.msaasd.progresspro.R
 
-class Task : AppCompatActivity() {
+class TaskActivity : AppCompatActivity() {
     private lateinit var drawer: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
