@@ -62,9 +62,15 @@ dependencies {
     implementation "androidx.room:room-paging:$room_version"
 
     // ViewModel
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.6.2"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.2"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.6.2"
 
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.2"
+
+    // Kotlin components
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.20"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 }
