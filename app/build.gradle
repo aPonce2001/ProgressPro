@@ -60,4 +60,11 @@ dependencies {
 
     // Paging 3 Integration
     implementation "androidx.room:room-paging:$room_version"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.6.2"
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.2"
 }
