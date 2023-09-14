@@ -1,5 +1,6 @@
 package com.msaasd.progresspro.models.daos
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -22,22 +23,22 @@ interface BadgeDao {
 
     @Transaction
     @Query("SELECT * FROM badges WHERE badge_id = :badgeId")
-    suspend fun getBadgeById(badgeId: Int): Badge
+    suspend fun getBadgeById(badgeId: Int): LiveData<Badge>
 
     @Transaction
     @Query("SELECT * FROM badges")
-    suspend fun getAllBadges(): List<Badge>
+    suspend fun getAllBadges(): LiveData<List<Badge>>
 
     @Transaction
     @Query(
         "SELECT * FROM badges WHERE badge_id NOT IN" +
                 " (SELECT badge_id FROM user_badge_cross_ref WHERE user_id = :userId)"
     )
-    suspend fun getPendingBadgesForUser(userId: Int): List<Badge>
+    suspend fun getPendingBadgesForUser(userId: Int): LiveData<List<Badge>>
 
     @Query(
         "SELECT * FROM badges WHERE required_points > :userExperiencePoints " +
                 "ORDER BY required_points ASC LIMIT 1"
     )
-    suspend fun getNextBadgeToUnlock(userExperiencePoints: Int): Badge?
+    suspend fun getNextBadgeToUnlock(userExperiencePoints: Int): LiveData<Badge?>
 }

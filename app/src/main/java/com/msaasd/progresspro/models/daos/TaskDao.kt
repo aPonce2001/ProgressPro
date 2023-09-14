@@ -1,5 +1,6 @@
 package com.msaasd.progresspro.models.daos
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -24,25 +25,25 @@ interface TaskDao {
 
     @Transaction
     @Query("SELECT * FROM tasks WHERE task_id = :taskId")
-    suspend fun getTaskById(taskId: Int): Task
+    suspend fun getTaskById(taskId: Int): LiveData<Task>
 
     @Transaction
     @Query("SELECT * FROM tasks WHERE user_id = :userId")
-    suspend fun getTasksForUser(userId: Int): List<Task>
+    suspend fun getTasksForUser(userId: Int): LiveData<List<Task>>
 
     @Transaction
     @Query("SELECT * FROM tasks WHERE task_id = :taskId")
-    suspend fun getTaskWithSubtasks(taskId: Int): List<TaskWithSubtasks>
+    suspend fun getTaskWithSubtasks(taskId: Int): LiveData<List<TaskWithSubtasks>>
 
     @Transaction
     @Query("SELECT * FROM tasks WHERE user_id = :userId AND state = :createdState")
-    fun getCreatedTasks(userId: Int, createdState: TaskState = TaskState.CREATED): List<Task>
+    fun getCreatedTasks(userId: Int, createdState: TaskState = TaskState.CREATED): LiveData<List<Task>>
 
     @Transaction
     @Query("SELECT * FROM tasks WHERE user_id = :userId AND state = :doneState")
-    fun getDoneTasks(userId: Int, doneState: TaskState = TaskState.DONE): List<Task>
+    fun getDoneTasks(userId: Int, doneState: TaskState = TaskState.DONE): LiveData<List<Task>>
 
     @Transaction
     @Query("SELECT * FROM tasks WHERE user_id = :userId AND is_pinned = 1")
-    fun getPinnedTasks(userId: Int): List<Task>
+    fun getPinnedTasks(userId: Int): LiveData<List<Task>>
 }

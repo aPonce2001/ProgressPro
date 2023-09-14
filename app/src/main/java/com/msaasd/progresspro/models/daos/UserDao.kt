@@ -1,5 +1,6 @@
 package com.msaasd.progresspro.models.daos
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -20,17 +21,17 @@ interface UserDao {
 
     @Transaction
     @Query("SELECT * FROM ${User.TABLE_NAME} LIMIT 1")
-    suspend fun getUser(): User
+    suspend fun getUser(): LiveData<User>
 
     @Transaction
     @Query("SELECT * FROM ${User.TABLE_NAME} WHERE user_id = :userId")
-    suspend fun getUser(userId: Int): User
+    suspend fun getUser(userId: Int): LiveData<User>
 
     @Transaction
     @Query("SELECT * FROM ${User.TABLE_NAME} WHERE user_id = :userId")
-    suspend fun getUserWithTasks(userId: Int): UserWithTasks
+    suspend fun getUserWithTasks(userId: Int): LiveData<UserWithTasks>
 
     @Transaction
     @Query("SELECT * FROM ${User.TABLE_NAME} WHERE user_id = :userId")
-    suspend fun getUserWithBadges(userId: Int): UserWithBadges
+    suspend fun getUserWithBadges(userId: Int): LiveData<UserWithBadges>
 }
