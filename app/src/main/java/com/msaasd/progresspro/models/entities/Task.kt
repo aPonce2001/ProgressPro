@@ -13,7 +13,7 @@ import java.time.LocalDateTime
 
 @Entity(tableName = TABLE_NAME)
 data class Task(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "task_id") val taskId: Int,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "task_id") val taskId: Int = 0,
     @ColumnInfo(name = "name") var name: String,
     @ColumnInfo(name = "description") var description: String? = null,
     @TypeConverters(TaskStateConverter::class) @ColumnInfo(name = "state") var state: TaskState = TaskState.CREATED,

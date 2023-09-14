@@ -8,7 +8,7 @@ import com.msaasd.progresspro.models.entities.Subtask.Companion.TABLE_NAME
 @Entity(tableName = TABLE_NAME)
 data class Subtask(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "subtask_id") val subtaskId: Int,
+    @ColumnInfo(name = "subtask_id") val subtaskId: Int = 0,
     @ColumnInfo(name = "description") var descriptor: String,
     @ColumnInfo(name = "is_complete") var isComplete: Boolean,
     @ColumnInfo(name = "task_id") val taskId: Int
