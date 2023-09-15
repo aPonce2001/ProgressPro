@@ -25,6 +25,8 @@ class AddTaskActivity : AppCompatActivity() {
         val imageButton = findViewById<ImageButton>(R.id.imageButtonPin)
         var isSelected = false
 
+        val imageButtonSave = findViewById<ImageButton>(R.id.imageButtonSave)
+
         addButton.setOnClickListener {
             // Crear elementos dinámicamente
             val linearLayoutItem = LinearLayout(this)
@@ -91,6 +93,10 @@ class AddTaskActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+        imageButtonSave.setOnClickListener{
+            finish()
+        }
     }
 
 }

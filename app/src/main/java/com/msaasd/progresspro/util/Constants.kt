@@ -17,4 +17,9 @@ object Constants {
         val DATE_TIME_FORMATTER: DateTimeFormatter =
             DateTimeFormatter.ofPattern(DATE_TIME_FORMAT)
     }
+
+    object ExtraDataConstants {
+        const val USER_ID = "userId"
+        const val TASK_ID = "taskId"
+    }
 }
