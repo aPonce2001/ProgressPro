@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.msaasd.progresspro.models.entities.Task
 import com.msaasd.progresspro.models.entities.Subtask
-import com.msaasd.progresspro.models.entities.relations.TaskWithSubtasks
 import com.msaasd.progresspro.repositories.SubtaskRepository
 import com.msaasd.progresspro.repositories.TaskRepository
 import kotlinx.coroutines.launch

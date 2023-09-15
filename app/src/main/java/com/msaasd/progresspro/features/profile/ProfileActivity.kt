@@ -9,14 +9,22 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModelProvider
+import androidx.room.Room
 import com.google.android.material.navigation.NavigationView
 import com.msaasd.progresspro.R
 import com.msaasd.progresspro.features.history.HistoryActivity
 import com.msaasd.progresspro.features.task.TaskActivity
+import com.msaasd.progresspro.features.task.TaskViewModel
+import com.msaasd.progresspro.models.daos.TaskDao
+import com.msaasd.progresspro.models.database.ProgressProDatabase
+import com.msaasd.progresspro.repositories.TaskRepository
 
 class ProfileActivity : AppCompatActivity(){
     private lateinit var drawer: DrawerLayout
     private lateinit var navView: NavigationView
+    private lateinit var taskViewModel: TaskViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +46,18 @@ class ProfileActivity : AppCompatActivity(){
         progressBar.max = 100
         // Valor de progreso deseado (70)
         val targetProgress = 70
+
+//        val targetProgress: Int
+//
+//        val allTaskCount = taskViewModel.getTaskCount(1).toString().toInt()
+//        val doneTaskCount = taskViewModel.getDoneTasks(1).toString().toInt()
+//
+//        if (allTaskCount != 0) {
+//            targetProgress = doneTaskCount * 100 / allTaskCount
+//        } else {
+//            targetProgress = 0
+//        }
+
         // Crea un ObjectAnimator para animar el progreso
         val animator = ObjectAnimator.ofInt(progressBar, "progress", targetProgress)
         // Establece la duración de la animación en milisegundos

@@ -15,10 +15,10 @@
         tools:targetApi="31">
         <activity android:name=".features.history.HistoryActivity" />
         <activity android:name=".features.task.AddTaskActivity" />
-        <activity android:name=".features.task.TaskActivity" />
+        <activity android:name=".features.profile.ProfileActivity" />
 
         <activity
-            android:name=".features.profile.ProfileActivity"
+            android:name=".features.task.TaskActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
