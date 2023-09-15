@@ -11,7 +11,7 @@ data class User(
     @ColumnInfo("user_id") val userId: Int = 0,
     @ColumnInfo("first_name") var firstName: String,
     @ColumnInfo("last_name") var lastName: String,
-    @ColumnInfo("experience_points") var experiencePoints: Int
+    @ColumnInfo("experience_points") var experiencePoints: Int = 0
 ) {
     companion object {
         const val TABLE_NAME = "users"

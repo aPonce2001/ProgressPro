@@ -77,6 +77,12 @@ abstract class ProgressProDatabase : RoomDatabase() {
             INSTANCE?.let { database ->
                 scope.launch {
                     populateBadges(database.badgeDao())
+                    database.userDao().insert(
+                        User(
+                            firstName = "Adrián",
+                            lastName = "Egüez"
+                        )
+                    )
                 }
             }
         }
